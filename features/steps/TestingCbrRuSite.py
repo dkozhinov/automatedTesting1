@@ -14,6 +14,9 @@ import smtplib
 import os
 
 
+#Для запомнинания текста предупреждения
+save_warning_text = ""
+
 def deletefile(filename):
     if os.path.isfile(filename):
         os.remove(filename)
@@ -159,8 +162,41 @@ def step(context):
     )
     assert context.browser.find_element_by_link_text(my_link_text)
     context.browser.find_element_by_link_text(my_link_text).click()
-    time.sleep(10)
+
+
+@then("save warning text")
+def step(context):
+    my_id = 'content'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.ID, my_id))
+    )
+    assert context.browser.find_element_by_id(my_id)
+    save_warning_text = context.browser.find_element_by_id(my_id).text
+    #print("save_warning_text=", save_warning_text)
+
+
+@then("changed page language to en")
+def step(context):
+    my_href = '//a[contains(.,"EN")]'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.XPATH, my_href))
+    )
+    assert context.browser.find_element_by_xpath(my_href)
+    context.browser.find_element_by_xpath(my_href).click()
 
 
 
-#context.browser.quit()
+@then("check warning text is different from the memorized text previously")
+def step(context):
+    my_id = 'content'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.ID, my_id))
+    )
+    assert context.browser.find_element_by_id(my_id)
+    assert save_warning_text != context.browser.find_element_by_id(my_id).text, \
+        "Aborting test: warning text is equal from the memorized text previously"
+
+
+@then("end test")
+def step(context):
+    context.browser.quit()

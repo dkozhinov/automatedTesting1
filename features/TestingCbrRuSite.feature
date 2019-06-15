@@ -7,8 +7,13 @@ Scenario: Search Bank of Russia site on google.ru
   Then opened link Write gratitude
   Then write in textarea MessageBody 'случайный текст'
   Then select the checkbox Agreement
-  #Then make screenshot and send email
+  Then make screenshot and send email
   Then press the button Three strips
   Then clicked on the section About
   Then clicked link Warning
+  Then save warning text
+  Then changed page language to en
+  Then check warning text is different from the memorized text previously
+  Then make screenshot and send email
+  Then end test
   
