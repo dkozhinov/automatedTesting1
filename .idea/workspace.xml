@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="987daf8d-5592-4d4a-8d8a-9de5b1c68638" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/features/steps/TestingCbrRuSite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/TestingCbrRuSite.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/TestingCbrRuSite.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/steps/TestingCbrRuSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/TestingCbrRuSite.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/steps/TestingCbrRuSite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="367">
+              <caret line="80" column="22" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="22" />
               <folding>
                 <element signature="e#32#52#0" expanded="true" />
               </folding>
@@ -59,8 +61,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
   </component>
@@ -93,6 +95,9 @@
       </pane>
       <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,8 +153,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/TestingCbrRuSite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="367">
+          <caret line="80" column="22" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="22" />
           <folding>
             <element signature="e#32#52#0" expanded="true" />
           </folding>

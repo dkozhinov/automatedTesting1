@@ -26,18 +26,18 @@ def step(context, text):
 
 @then("displayed page www.google.ru and opened link '{link}'")
 def step(context, link):
+    my_href = '//a[@href="%s"]' % link
     WebDriverWait(context.browser, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//a[@href="%s"]' % link))
+        EC.presence_of_element_located((By.XPATH, my_href))
     )
-    assert context.browser.find_element_by_xpath('//a[@href="%s"]' % link)
+    assert context.browser.find_element_by_xpath(my_href)
     # cbr.ru Открываем в том же окне, потому что selenium больше трех вкладок не хочет открывать
-    url = context.browser.find_element_by_xpath('//a[@href="%s"]' % link).get_attribute("href")
+    url = context.browser.find_element_by_xpath(my_href).get_attribute("href")
     context.browser.get(url)
 
 
 @then("on cbr.ru opened link Internet-reception")
 def step(context):
-    #my_href = '//a[contains(text(), "Интернет-приемная")]'
     my_href = '//a[contains(.,"Интернет-приемная")]'
     WebDriverWait(context.browser, 20).until(
         EC.presence_of_element_located((By.XPATH, my_href))
@@ -46,7 +46,7 @@ def step(context):
     context.browser.find_element_by_xpath(my_href).click()
 
 
-@then("on cbr.ru opened link Write gratitude")
+@then("opened link Write gratitude")
 def step(context):
     my_href = '//h2[contains(.,"Написать благодарность")]'
     WebDriverWait(context.browser, 20).until(
@@ -56,14 +56,31 @@ def step(context):
     context.browser.find_element_by_xpath(my_href).click()
 
 
-@then("on cbr.ru write gratitude on textarea MessageBody '{text}'")
+@then("write in textarea MessageBody '{text}'")
 def step(context,text):
-    my_textarea = 'MessageBody'
+    my_textarea = '//textarea[contains(@name,"MessageBody")]'
     WebDriverWait(context.browser, 20).until(
-        EC.presence_of_element_located((By.XPATH, '//textarea[contains(@name,"%s")]' % my_textarea))
+        EC.presence_of_element_located((By.XPATH, my_textarea))
     )
-    assert context.browser.find_element_by_xpath('//textarea[contains(@name,"%s")]' % my_textarea)
-    context.browser.find_element_by_xpath('//textarea[contains(@name,"%s")]' % my_textarea).send_keys(text)
+    assert context.browser.find_element_by_xpath(my_textarea)
+    context.browser.find_element_by_xpath(my_textarea).send_keys(text)
+
+
+
+@then("select the checkbox Agreement")
+def step(context):
+    my_href = '//input[@name="Agreement"]'
+    WebDriverWait(context.browser, 20).until(
+        EC.element_to_be_clickable((By.XPATH, my_href))
+    )
+    assert context.browser.find_element_by_xpath(my_href)
+    context.browser.find_element_by_xpath(my_href).click()
+
+
+
+@then("make screenshot")
+def step(context):
+    context.browser.save_screenshot("screenshot.png")
     time.sleep(10)
 
 #context.browser.quit()
