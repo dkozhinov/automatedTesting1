@@ -7,4 +7,4 @@ Scenario: Search Bank of Russia site on google.ru
   Then opened link Write gratitude
   Then write in textarea MessageBody 'случайный текст'
   Then select the checkbox Agreement
-  Then make screenshot
+  Then make screenshot and send email
