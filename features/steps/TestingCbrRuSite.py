@@ -30,7 +30,9 @@ def step(context, link):
         EC.presence_of_element_located((By.XPATH, '//a[@href="%s"]' % link))
     )
     assert context.browser.find_element_by_xpath('//a[@href="%s"]' % link)
-    context.browser.find_element_by_xpath('//a[@href="%s"]' % link).click()
+    # cbr.ru Открываем в том же окне, потому что selenium больше трех вкладок не хочет открывать
+    url = context.browser.find_element_by_xpath('//a[@href="%s"]' % link).get_attribute("href")
+    context.browser.get(url)
 
 
 @then("on cbr.ru opened link Internet-reception")
@@ -54,6 +56,14 @@ def step(context):
     context.browser.find_element_by_xpath(my_href).click()
 
 
-
+@then("on cbr.ru write gratitude on textarea MessageBody '{text}'")
+def step(context,text):
+    my_textarea = 'MessageBody'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.XPATH, '//textarea[contains(@name,"%s")]' % my_textarea))
+    )
+    assert context.browser.find_element_by_xpath('//textarea[contains(@name,"%s")]' % my_textarea)
+    context.browser.find_element_by_xpath('//textarea[contains(@name,"%s")]' % my_textarea).send_keys(text)
+    time.sleep(10)
 
 #context.browser.quit()
