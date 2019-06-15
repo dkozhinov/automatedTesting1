@@ -127,9 +127,39 @@ def step(context):
     deletefile(screenshot_filename)
     context.browser.save_screenshot(screenshot_filename)
     sendemail(screenshot_filename)
+
+
+
+
+@then("press the button Three strips")
+def step(context):
+    my_href = '//span[contains(@class,"burger")]'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.XPATH, my_href))
+    )
+    assert context.browser.find_element_by_xpath(my_href)
+    context.browser.find_element_by_xpath(my_href).click()
+
+
+@then("clicked on the section About")
+def step(context):
+    my_link_text = 'О сайте'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.LINK_TEXT, my_link_text))
+    )
+    assert context.browser.find_element_by_link_text(my_link_text)
+    context.browser.find_element_by_link_text(my_link_text).click()
+
+
+@then("clicked link Warning")
+def step(context):
+    my_link_text = 'Предупреждение'
+    WebDriverWait(context.browser, 20).until(
+        EC.presence_of_element_located((By.LINK_TEXT, my_link_text))
+    )
+    assert context.browser.find_element_by_link_text(my_link_text)
+    context.browser.find_element_by_link_text(my_link_text).click()
     time.sleep(10)
-
-
 
 
 

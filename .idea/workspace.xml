@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="987daf8d-5592-4d4a-8d8a-9de5b1c68638" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/features/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/TestingCbrRuSite.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/TestingCbrRuSite.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/steps/TestingCbrRuSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/steps/TestingCbrRuSite.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/steps/TestingCbrRuSite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="117" column="7" lean-forward="true" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="37" />
+            <state relative-caret-position="367">
+              <caret line="153" column="20" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
               <folding>
                 <element signature="e#32#52#0" expanded="true" />
               </folding>
@@ -152,8 +152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/features/steps/TestingCbrRuSite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="117" column="7" lean-forward="true" selection-start-line="117" selection-start-column="7" selection-end-line="117" selection-end-column="37" />
+        <state relative-caret-position="367">
+          <caret line="153" column="20" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="20" />
           <folding>
             <element signature="e#32#52#0" expanded="true" />
           </folding>
