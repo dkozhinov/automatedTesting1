@@ -1,0 +1,27 @@
+C:\Workshop\Tests\automatedTesting1\features>behave -i TestingCbrRuSite.feature > out1.txt
+Feature: Testing site cbr.ru # TestingCbrRuSite.feature:1
+
+  Scenario: Search Bank of Russia site on google.ru                         # TestingCbrRuSite.feature:2
+    Given website www.google.ru                                             # steps/TestingCbrRuSite.py:57
+    When push search button with text 'Центральный банк РФ'                 # steps/TestingCbrRuSite.py:64
+    Then displayed page www.google.ru and opened link 'https://www.cbr.ru/' # steps/TestingCbrRuSite.py:73
+    When check the opening of the site 'https://www.cbr.ru/'                # steps/TestingCbrRuSite.py:85
+current_url= https://www.cbr.ru/
+    Then on cbr.ru opened link Internet-reception                           # steps/TestingCbrRuSite.py:91
+    Then opened link Write gratitude                                        # steps/TestingCbrRuSite.py:101
+    Then write in textarea MessageBody 'случайный текст'                    # steps/TestingCbrRuSite.py:111
+    Then select the checkbox Agreement                                      # steps/TestingCbrRuSite.py:122
+    Then make screenshot and send email                                     # steps/TestingCbrRuSite.py:133
+    Then press the button Three strips                                      # steps/TestingCbrRuSite.py:143
+    Then clicked on the section About                                       # steps/TestingCbrRuSite.py:153
+    Then clicked link Warning                                               # steps/TestingCbrRuSite.py:163
+    Then save warning text                                                  # steps/TestingCbrRuSite.py:173
+    Then changed page language to en                                        # steps/TestingCbrRuSite.py:184
+    Then check warning text is different from the memorized text previously # steps/TestingCbrRuSite.py:195
+    Then make screenshot and send email                                     # steps/TestingCbrRuSite.py:133
+    Then end test                                                           # steps/TestingCbrRuSite.py:206
+
+1 feature passed, 0 failed, 0 skipped
+1 scenario passed, 0 failed, 0 skipped
+17 steps passed, 0 failed, 0 skipped, 0 undefined
+Took 0m39.248s

@@ -82,6 +82,12 @@ def step(context, link):
     context.browser.get(url)
 
 
+@when("check the opening of the site '{url}'")
+def step(context, url):
+    print("current_url=", context.browser.current_url)
+    assert context.browser.current_url == url, "Aborting test: Do not check the opening of the site!"
+
+
 @then("on cbr.ru opened link Internet-reception")
 def step(context):
     my_href = '//a[contains(.,"Интернет-приемная")]'

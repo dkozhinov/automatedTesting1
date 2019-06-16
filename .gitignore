@@ -1,0 +1,5 @@
+/.idea/
+/.idea/workspace.xml
+*.log
+*.pyc
+./features/pages/__pycache__
